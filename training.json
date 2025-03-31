@@ -1,0 +1,147 @@
+{
+    "nodes": [
+      { "id": "Calculator", "type": "class" },
+      { "id": "Calculator.add_abhik", "type": "function", "parent": "Calculator" },
+      { "id": "Calculator.subtract_abhik", "type": "function", "parent": "Calculator" },
+      { "id": "Calculator.multiply_abhik", "type": "function", "parent": "Calculator" },
+      { "id": "Calculator.divide_abhik", "type": "function", "parent": "Calculator" },
+      { "id": "AdvancedCalculator", "type": "class", "parent": "Calculator" },
+      { "id": "AdvancedCalculator.power_abhik", "type": "function", "parent": "AdvancedCalculator" },
+      { "id": "AdvancedCalculator.sqrt_abhik", "type": "function", "parent": "AdvancedCalculator" },
+      { "id": "AdvancedCalculator.log_abhik", "type": "function", "parent": "AdvancedCalculator" },
+      { "id": "TaxCalculator", "type": "class", "parent": "Calculator" },
+      { "id": "TaxCalculator.calculateTax", "type": "function", "parent": "TaxCalculator" },
+      { "id": "TaxCalculator.applyDiscount", "type": "function", "parent": "TaxCalculator" },
+      { "id": "CurrencyConverter", "type": "class", "parent": "Calculator" },
+      { "id": "CurrencyConverter.convert", "type": "function", "parent": "CurrencyConverter" },
+      { "id": "LoanCalculator", "type": "class", "parent": "Calculator" },
+      { "id": "LoanCalculator.calculateEMI", "type": "function", "parent": "LoanCalculator" },
+      { "id": "InterestCalculator", "type": "class", "parent": "Calculator" },
+      { "id": "InterestCalculator.calculateSimpleInterest", "type": "function", "parent": "InterestCalculator" },
+      { "id": "InterestCalculator.calculateCompoundInterest", "type": "function", "parent": "InterestCalculator" },
+      { "id": "FinancialCalculator", "type": "class", "parent": "Calculator" },
+      { "id": "FinancialCalculator.computeEMI", "type": "function", "parent": "FinancialCalculator" },
+      { "id": "FinancialCalculator.computeSimpleInterest", "type": "function", "parent": "FinancialCalculator" },
+      { "id": "FinancialCalculator.computeCompoundInterest", "type": "function", "parent": "FinancialCalculator" },
+      { "id": "FinancialCalculator.computeTax", "type": "function", "parent": "FinancialCalculator" },
+      { "id": "FinancialCalculator.convertCurrency", "type": "function", "parent": "FinancialCalculator" }
+    ],
+    "edges": [
+      { "from": "Calculator", "to": "Calculator.add_abhik", "relation": "has_method" },
+      { "from": "Calculator", "to": "Calculator.subtract_abhik", "relation": "has_method" },
+      { "from": "Calculator", "to": "Calculator.multiply_abhik", "relation": "has_method" },
+      { "from": "Calculator", "to": "Calculator.divide_abhik", "relation": "has_method" },
+      { "from": "AdvancedCalculator", "to": "Calculator", "relation": "inherits" },
+      { "from": "AdvancedCalculator", "to": "AdvancedCalculator.power_abhik", "relation": "has_method" },
+      { "from": "AdvancedCalculator", "to": "AdvancedCalculator.sqrt_abhik", "relation": "has_method" },
+      { "from": "AdvancedCalculator", "to": "AdvancedCalculator.log_abhik", "relation": "has_method" },
+      { "from": "AdvancedCalculator.sqrt_abhik", "to": "Calculator.multiply_abhik", "relation": "calls" },
+      { "from": "AdvancedCalculator.sqrt_abhik", "to": "Calculator.divide_abhik", "relation": "calls" },
+      { "from": "TaxCalculator", "to": "Calculator", "relation": "inherits" },
+      { "from": "TaxCalculator", "to": "TaxCalculator.calculateTax", "relation": "has_method" },
+      { "from": "TaxCalculator", "to": "TaxCalculator.applyDiscount", "relation": "has_method" },
+      { "from": "TaxCalculator.calculateTax", "to": "AdvancedCalculator.divide_abhik", "relation": "calls" },
+      { "from": "TaxCalculator.calculateTax", "to": "AdvancedCalculator.multiply_abhik", "relation": "calls" },
+      { "from": "TaxCalculator.applyDiscount", "to": "AdvancedCalculator.subtract_abhik", "relation": "calls" },
+      { "from": "TaxCalculator.applyDiscount", "to": "AdvancedCalculator.divide_abhik", "relation": "calls" },
+      { "from": "TaxCalculator.applyDiscount", "to": "AdvancedCalculator.multiply_abhik", "relation": "calls" },
+      { "from": "CurrencyConverter", "to": "CurrencyConverter.convert", "relation": "has_method" },
+      { "from": "CurrencyConverter.convert", "to": "AdvancedCalculator.divide_abhik", "relation": "calls" },
+      { "from": "CurrencyConverter.convert", "to": "AdvancedCalculator.multiply_abhik", "relation": "calls" },
+      { "from": "LoanCalculator", "to": "Calculator", "relation": "inherits" },
+      { "from": "LoanCalculator", "to": "LoanCalculator.calculateEMI", "relation": "has_method" },
+      { "from": "LoanCalculator.calculateEMI", "to": "AdvancedCalculator.divide_abhik", "relation": "calls" },
+      { "from": "LoanCalculator.calculateEMI", "to": "AdvancedCalculator.multiply_abhik", "relation": "calls" },
+      { "from": "LoanCalculator.calculateEMI", "to": "AdvancedCalculator.power_abhik", "relation": "calls" },
+      { "from": "LoanCalculator.calculateEMI", "to": "AdvancedCalculator.add_abhik", "relation": "calls" },
+      { "from": "InterestCalculator", "to": "Calculator", "relation": "inherits" },
+      { "from": "InterestCalculator.calculateSimpleInterest", "to": "AdvancedCalculator.multiply_abhik", "relation": "calls" },
+      { "from": "InterestCalculator.calculateSimpleInterest", "to": "AdvancedCalculator.divide_abhik", "relation": "calls" },
+      { "from": "InterestCalculator.calculateCompoundInterest", "to": "AdvancedCalculator.divide_abhik", "relation": "calls" },
+      { "from": "InterestCalculator.calculateCompoundInterest", "to": "AdvancedCalculator.multiply_abhik", "relation": "calls" },
+      { "from": "InterestCalculator.calculateCompoundInterest", "to": "AdvancedCalculator.add_abhik", "relation": "calls" },
+      { "from": "InterestCalculator.calculateCompoundInterest", "to": "AdvancedCalculator.power_abhik", "relation": "calls" },
+      { "from": "InterestCalculator.calculateCompoundInterest", "to": "AdvancedCalculator.subtract_abhik", "relation": "calls" },
+      { "from": "FinancialCalculator", "to": "Calculator", "relation": "inherits" },
+      { "from": "FinancialCalculator.computeEMI", "to": "LoanCalculator.calculateEMI", "relation": "calls" },
+      { "from": "FinancialCalculator.computeSimpleInterest", "to": "InterestCalculator.calculateSimpleInterest", "relation": "calls" },
+      { "from": "FinancialCalculator.computeCompoundInterest", "to": "InterestCalculator.calculateCompoundInterest", "relation": "calls" },
+      { "from": "FinancialCalculator.computeTax", "to": "TaxCalculator.calculateTax", "relation": "calls" },
+      { "from": "FinancialCalculator.convertCurrency", "to": "CurrencyConverter.convert", "relation": "calls" }
+    ],
+    "implementation": [
+      {
+        "name": "add_abhik",
+        "code": "double Calculator::add_abhik(double a, double b) {\n    return a + b;\n}"
+      },
+      {
+        "name": "subtract_abhik",
+        "code": "double Calculator::subtract_abhik(double a, double b) {\n    return a - b;\n}"
+      },
+      {
+        "name": "multiply_abhik",
+        "code": "double Calculator::multiply_abhik(double a, double b) {\n    return a * b;\n}"
+      },
+      {
+        "name": "divide_abhik",
+        "code": "double Calculator::divide_abhik(double a, double b) {\n    if (b != 0) {\n        return a / b;\n    } else {\n        std::cerr << \"Error: Division by zero!\" << std::endl;\n        return 0;\n    }\n}"
+      },
+      {
+        "name": "power_abhik",
+        "code": "double AdvancedCalculator::power_abhik(double base, double exponent) {\n    return std::pow(base, exponent);\n}"
+      },
+      {
+        "name": "sqrt_abhik",
+        "code": "double AdvancedCalculator::sqrt_abhik(double number) {\n    if (number >= 0) {\n        double result = multiply_abhik(number, 0.5);\n        result = divide_abhik(result, 0.5);\n        std::cout << \"Calculating square root of \" << result << std::endl;\n        return std::sqrt(result);\n    } else {\n        std::cerr << \"Error: Cannot calculate square root of a negative number!\" << std::endl;\n        return 0;\n    }\n}"
+      },
+      {
+        "name": "log_abhik",
+        "code": "double AdvancedCalculator::log_abhik(double number) {\n    if (number > 0) {\n        return std::log10(number);\n    } else {\n        std::cerr << \"Error: Logarithm of non-positive numbers is undefined!\" << std::endl;\n        return 0;\n    }\n}"
+      },
+      {
+        "name": "calculateTax",
+        "code": "double TaxCalculator::calculateTax(double amount, double taxRate) {\n    try {\n        if (amount < 0 || taxRate < 0) {\n            throw std::invalid_argument(\"Amount and tax rate must be non-negative values.\");\n        }\n        return advanced_calculator.divide_abhik(advanced_calculator.multiply_abhik(amount, taxRate), 100);\n    } catch (const std::exception& e) {\n        std::cerr << \"Error calculating Tax: \" << e.what() << std::endl;\n        return 0.0;\n    }\n}"
+      },
+      {
+        "name": "applyDiscount",
+        "code": "double TaxCalculator::applyDiscount(double amount, double discountRate) {\n    try {\n        if (amount < 0 || discountRate < 0 || discountRate > 100) {\n            throw std::invalid_argument(\"Amount must be non-negative and discount rate should be between 0 and 100.\");\n        }\n        return advanced_calculator.subtract_abhik(amount, advanced_calculator.divide_abhik(advanced_calculator.multiply_abhik(amount, discountRate), 100));\n    } catch (const std::exception& e) {\n        std::cerr << \"Error applying Discount: \" << e.what() << std::endl;\n        return 0.0;\n    }\n}"
+      },
+      {
+        "name": "convert",
+        "code": "CurrencyConverter::CurrencyConverter() {\n    exchangeRates[\"USD\"] = 1.0; // Base currency\n    exchangeRates[\"EUR\"] = 0.85;\n    exchangeRates[\"GBP\"] = 0.75;\n    exchangeRates[\"INR\"] = 74.50;\n    exchangeRates[\"JPY\"] = 110.0;\n}\n\ndouble CurrencyConverter::convert(double amount, const std::string& from, const std::string& to) {\n    try {\n        if (amount < 0) {\n            throw std::invalid_argument(\"Amount must be non-negative.\");\n        }\n        if (exchangeRates.find(from) == exchangeRates.end() || exchangeRates.find(to) == exchangeRates.end()) {\n            throw std::invalid_argument(\"Invalid currency codes.\");\n        }\n        double inUSD = advanced_calculator.divide_abhik(amount, exchangeRates[from]);\n        return advanced_calculator.multiply_abhik(inUSD, exchangeRates[to]);\n    } catch (const std::exception& e) {\n        std::cerr << \"Error converting currency: \" << e.what() << std::endl;\n        return 0.0;\n    }\n}"
+      },
+      {
+        "name": "calculateEMI",
+        "code": "double LoanCalculator::calculateEMI(double principal, double rate, int months) {\n    try {\n        if (principal <= 0 || rate <= 0 || months <= 0) {\n            throw std::invalid_argument(\"Principal, rate, and months must be positive values.\");\n        }\n        \n        double monthlyRate = advanced_calculator.divide_abhik(rate, advanced_calculator.multiply_abhik(12, 100)); // Convert annual rate to monthly percentage\n        double powerFactor = advanced_calculator.power_abhik(advanced_calculator.add_abhik(1, monthlyRate), months);\n        double emi = advanced_calculator.divide_abhik(advanced_calculator.multiply_abhik(advanced_calculator.multiply_abhik(principal, monthlyRate), powerFactor), advanced_calculator.subtract_abhik(powerFactor, 1));\n        \n        return emi;\n    } catch (const std::exception& e) {\n        std::cerr << \"Error calculating EMI: \" << e.what() << std::endl;\n        return 0.0;\n    }\n}"
+      },
+      { 
+        "name": "calculateSimpleInterest",
+        "code": "double InterestCalculator::calculateSimpleInterest(double principal, double rate, double time) { return (principal * rate * time) / 100; }"
+      },
+      { 
+        "name": "calculateCompoundInterest",
+        "code": "double InterestCalculator::calculateCompoundInterest(double principal, double rate, double time, int timesCompounded) { return principal * pow(1 + (rate / (100 * timesCompounded)), timesCompounded * time) - principal; }"
+      },
+      { 
+        "name": "computeEMI",
+        "code": "double FinancialCalculator::computeEMI(double principal, double rate, int months) { LoanCalculator loanCalc; return loanCalc.calculateEMI(principal, rate, months); }"
+      },
+    { 
+        "name": "computeSimpleInterest",
+        "code": "double FinancialCalculator::computeSimpleInterest(double principal, double rate, double time) { InterestCalculator interestCalc; return interestCalc.calculateSimpleInterest(principal, rate, time); }"
+      },
+    { 
+        "name": "computeCompoundInterest",
+        "code": "double FinancialCalculator::computeCompoundInterest(double principal, double rate, double time, int timesCompounded) { InterestCalculator interestCalc; return interestCalc.calculateCompoundInterest(principal, rate, time, timesCompounded); }"
+      },
+    { 
+        "name": "computeTax",
+        "code": "double FinancialCalculator::computeTax(double amount, double taxRate) { TaxCalculator taxCalc; return taxCalc.calculateTax(amount, taxRate); }"
+      },
+    { 
+        "name": "convertCurrency",
+        "code": "double FinancialCalculator::convertCurrency(double amount, const std::string& from, const std::string& to) { CurrencyConverter currencyConv; return currencyConv.convert(amount, from, to); }"
+      }
+    ]
+}
+  

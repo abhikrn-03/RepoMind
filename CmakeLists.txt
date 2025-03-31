@@ -1,0 +1,18 @@
+cmake_minimum_required(VERSION 3.10)
+project(FinancialCalculator)
+
+set(CMAKE_CXX_STANDARD 17)
+
+# Add all source files
+add_executable(FinancialCalculator 
+    main.cpp 
+    calculator.cpp 
+    ad_calc.cpp 
+    loan_calculator.cpp 
+    interest_calculator.cpp 
+    tax_calculator.cpp 
+    currency_converter.cpp
+)
+
+# Include header files
+include_directories(${CMAKE_SOURCE_DIR})
